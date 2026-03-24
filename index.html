@@ -5,41 +5,54 @@
 
     <style>
         body {
-            font-family: Arial;
+            font-family: 'Segoe UI', sans-serif;
             margin: 0;
-            background: #f5f5f5;
+            background: #f8f9fa;
         }
 
         header {
-            background: #111;
+            background: linear-gradient(90deg, #000, #333);
             color: white;
-            padding: 15px 20px;
+            padding: 15px 30px;
             display: flex;
             justify-content: space-between;
             align-items: center;
         }
 
         .cart {
-            background: orange;
-            padding: 8px 12px;
-            border-radius: 5px;
+            background: #ff9800;
+            padding: 8px 15px;
+            border-radius: 20px;
+            font-weight: bold;
+        }
+
+        .banner {
+            background: #222;
+            color: white;
+            padding: 40px;
+            text-align: center;
         }
 
         .container {
             display: flex;
             flex-wrap: wrap;
             justify-content: center;
-            padding: 20px;
+            padding: 30px;
         }
 
         .product {
             background: white;
-            width: 220px;
+            width: 230px;
             margin: 15px;
             padding: 15px;
-            border-radius: 10px;
+            border-radius: 15px;
             text-align: center;
-            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+            transition: 0.3s;
+        }
+
+        .product:hover {
+            transform: translateY(-10px);
         }
 
         img {
@@ -47,13 +60,25 @@
             border-radius: 10px;
         }
 
+        h3 {
+            margin: 10px 0;
+        }
+
+        p {
+            font-size: 18px;
+            font-weight: bold;
+            color: #333;
+        }
+
         button {
             border: none;
             padding: 10px;
             margin-top: 8px;
             width: 100%;
-            border-radius: 5px;
+            border-radius: 8px;
             cursor: pointer;
+            font-weight: bold;
+            transition: 0.3s;
         }
 
         .cart-btn {
@@ -61,29 +86,43 @@
             color: white;
         }
 
+        .cart-btn:hover {
+            background: #0056b3;
+        }
+
         .buy-btn {
-            background: green;
+            background: #28a745;
             color: white;
+        }
+
+        .buy-btn:hover {
+            background: #1e7e34;
         }
 
         .checkout {
             display: block;
-            margin: 20px auto;
-            padding: 12px;
-            width: 200px;
+            margin: 30px auto;
+            padding: 15px;
+            width: 220px;
             background: black;
             color: white;
             text-align: center;
-            border-radius: 5px;
+            border-radius: 10px;
+            font-size: 16px;
+            transition: 0.3s;
             cursor: pointer;
+        }
+
+        .checkout:hover {
+            background: #333;
         }
 
         footer {
             background: #111;
             color: white;
             text-align: center;
-            padding: 20px;
-            margin-top: 30px;
+            padding: 25px;
+            margin-top: 40px;
         }
     </style>
 </head>
@@ -95,11 +134,16 @@
     <div class="cart">Cart: <span id="cart-count">0</span></div>
 </header>
 
+<div class="banner">
+    <h1>Welcome to Gowtham Shop</h1>
+    <p>Best Deals on Fashion & Accessories</p>
+</div>
+
 <div class="container">
 
     <div class="product">
-        <img src="https://encrypted-tbn2.gstatic.com/shopping?q=tbn:ANd9GcQGtnyvcteSsIIHrXJWPf_Uf37wlUUWKn9GZi9m70X685T8MyQg54PruoMf2ooCkz3qPQphld8yDry_KYN0kNLAJk84i58ThsCyg6lA6gQs8-K1wod8n4hy1UDzbpBi3p7gyOPjB_5x&usqp=CAc">
-        <h3>T-Shirt</h3>
+        <img src="https://via.placeholder.com/200">
+        <h3>Men’s Cotton T-Shirt</h3>
         <p>₹499</p>
         <button class="cart-btn" onclick="addToCart('T-Shirt')">Add to Cart</button>
         <button class="buy-btn" onclick="buyNow('T-Shirt')">Buy Now</button>
@@ -107,7 +151,7 @@
 
     <div class="product">
         <img src="https://via.placeholder.com/200">
-        <h3>Shoes</h3>
+        <h3>Running Sports Shoes</h3>
         <p>₹999</p>
         <button class="cart-btn" onclick="addToCart('Shoes')">Add to Cart</button>
         <button class="buy-btn" onclick="buyNow('Shoes')">Buy Now</button>
@@ -115,7 +159,7 @@
 
     <div class="product">
         <img src="https://via.placeholder.com/200">
-        <h3>Watch</h3>
+        <h3>Stylish Wrist Watch</h3>
         <p>₹1499</p>
         <button class="cart-btn" onclick="addToCart('Watch')">Add to Cart</button>
         <button class="buy-btn" onclick="buyNow('Watch')">Buy Now</button>
@@ -123,7 +167,7 @@
 
     <div class="product">
         <img src="https://via.placeholder.com/200">
-        <h3>Hoodie</h3>
+        <h3>Winter Hoodie</h3>
         <p>₹799</p>
         <button class="cart-btn" onclick="addToCart('Hoodie')">Add to Cart</button>
         <button class="buy-btn" onclick="buyNow('Hoodie')">Buy Now</button>
@@ -131,7 +175,7 @@
 
     <div class="product">
         <img src="https://via.placeholder.com/200">
-        <h3>Earbuds</h3>
+        <h3>Wireless Earbuds</h3>
         <p>₹1299</p>
         <button class="cart-btn" onclick="addToCart('Earbuds')">Add to Cart</button>
         <button class="buy-btn" onclick="buyNow('Earbuds')">Buy Now</button>
